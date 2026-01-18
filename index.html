@@ -11,7 +11,7 @@
   <header class="site-header">
     <nav class="nav">
       <div class="nav-left">
-        <img class="profile-photo" src="profile.jpg" alt="Profile photo" />
+        <img class="profile-photo" src="https://i.ibb.co/JwhsktKK/2.png" alt="Muhammed Billal profile photo" />
         <div class="brand">Muhammed Billal</div>
       </div>
 
@@ -62,11 +62,13 @@
       <p>Some of the badges, certifications, and milestones I've earned while learning and practicing cybersecurity and other skills.</p>
 
       <ul class="features-grid">
+        <!-- TryHackMe (remote image) -->
         <li class="feature-card">
           <div class="feature-media">
-            <a href="https://tryhackme.com/p/muhammadbillal" target="_blank" rel="noopener">
-              <img src="https://tryhackme-badges.s3.amazonaws.com/muhammadbillal.png" alt="TryHackMe 180 Day Streak badge" />
+            <a class="feature-link-media" href="https://tryhackme.com/p/muhammadbillal" target="_blank" rel="noopener">
+              <img loading="lazy" src="https://tryhackme-badges.s3.amazonaws.com/muhammadbillal.png" alt="TryHackMe 180 Day Streak badge" />
             </a>
+            <div class="placeholder">TryHackMe image not available</div>
           </div>
           <div class="feature-body">
             <h3>180 Day Streak</h3>
@@ -76,11 +78,13 @@
           </div>
         </li>
 
+        <!-- Google Skills (remote/local as before) -->
         <li class="feature-card">
           <div class="feature-media">
-            <a href="https://www.skills.google/public_profiles/51306e9d-3fd2-4640-b7c3-625508b8b79d" target="_blank" rel="noopener">
-              <img src="images/google-skills.png" alt="Google Skills profile" />
+            <a class="feature-link-media" href="https://www.skills.google/public_profiles/51306e9d-3fd2-4640-b7c3-625508b8b79d" target="_blank" rel="noopener">
+              <img loading="lazy" src="https://i.ibb.co/274gsPXW/silver.png" alt="Google Skills profile" />
             </a>
+            <div class="placeholder">Google Skills image not available</div>
           </div>
           <div class="feature-body">
             <h3>Google Skills Profile</h3>
@@ -90,11 +94,13 @@
           </div>
         </li>
 
+        <!-- Google Developer (image replaced per your request) -->
         <li class="feature-card">
           <div class="feature-media">
-            <a href="https://g.dev/muhammadbillal" target="_blank" rel="noopener">
-              <img src="images/gdev.png" alt="Google Developer profile" />
+            <a class="feature-link-media" href="https://g.dev/muhammadbillal" target="_blank" rel="noopener">
+              <img loading="lazy" src="https://i.ibb.co/9HYxHDg3/badge.jpg" alt="Google Developer profile badge" />
             </a>
+            <div class="placeholder">Google Dev image not available</div>
           </div>
           <div class="feature-body">
             <h3>Google Developer Profile</h3>
@@ -104,11 +110,13 @@
           </div>
         </li>
 
+        <!-- Credly -->
         <li class="feature-card">
           <div class="feature-media">
-            <a href="https://www.credly.com/badges/6931da38-635d-4995-9318-f2105ba078d4" target="_blank" rel="noopener">
-              <img src="images/credly-intro-cyber.png" alt="Introduction to Cybersecurity - Credly" />
+            <a class="feature-link-media" href="https://www.credly.com/badges/6931da38-635d-4995-9318-f2105ba078d4" target="_blank" rel="noopener">
+              <img loading="lazy" src="https://i.ibb.co/mKpBRqD/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity - Credly" />
             </a>
+            <div class="placeholder">Credly image not available</div>
           </div>
           <div class="feature-body">
             <h3>Introduction to Cybersecurity</h3>
@@ -117,7 +125,6 @@
             <a class="feature-link" href="https://www.credly.com/badges/6931da38-635d-4995-9318-f2105ba078d4" target="_blank" rel="noopener">View on Credly</a>
           </div>
         </li>
-
       </ul>
     </section>
 
@@ -253,7 +260,40 @@
   </footer>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Image fallback handler (keeps placeholders if images fail to load)
+    document.addEventListener('DOMContentLoaded', function () {
+      const featureMediaBlocks = document.querySelectorAll('.feature-media');
+      featureMediaBlocks.forEach(block => {
+        const img = block.querySelector('img');
+        const placeholder = block.querySelector('.placeholder');
+
+        if (!img) {
+          if (placeholder) placeholder.style.display = 'flex';
+          return;
+        }
+
+        img.addEventListener('load', () => {
+          if (placeholder) placeholder.style.display = 'none';
+          img.style.display = 'block';
+        });
+
+        img.addEventListener('error', () => {
+          img.style.display = 'none';
+          if (placeholder) placeholder.style.display = 'flex';
+        });
+
+        if (img.complete && img.naturalWidth > 0) {
+          if (placeholder) placeholder.style.display = 'none';
+          img.style.display = 'block';
+        } else if (img.complete) {
+          img.style.display = 'none';
+          if (placeholder) placeholder.style.display = 'flex';
+        }
+      });
+    });
   </script>
 </body>
 </html>
