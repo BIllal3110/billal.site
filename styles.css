@@ -1,0 +1,126 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#7dd3fc;
+  --text:#e6eef6;
+  --maxw:1000px;
+  --radius:12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#071129 0%, #071827 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.site-header{padding:24px 16px 16px; max-width:var(--maxw); margin:0 auto;}
+.nav{display:flex;align-items:center;justify-content:space-between;}
+.nav-left{display:flex;align-items:center;gap:12px}
+.brand{font-weight:700;font-size:1.1rem}
+
+/* Navigation right container */
+.nav-right{display:flex;align-items:center;gap:12px}
+
+/* Nav links */
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem}
+
+/* Social links (header) */
+.social-links{display:flex;gap:10px;align-items:center}
+.social-link{
+  color:var(--muted);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  transition:all .18s ease;
+}
+.social-link svg{display:block}
+.social-link:hover{background:rgba(125,211,252,0.08);color:var(--accent)}
+
+/* Profile photo */
+.profile-photo{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  border:2px solid rgba(255,255,255,0.06);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+}
+
+/* Hero */
+.hero{margin-top:20px;padding:28px;background:rgba(255,255,255,0.02);border-radius:var(--radius)}
+.hero h1{margin:0;font-size:clamp(1.6rem,4vw,2.4rem)}
+.hero p{color:var(--muted);margin:8px 0 16px}
+.cta{display:inline-block;padding:10px 16px;background:var(--accent);color:#04202a;border-radius:8px;text-decoration:none;font-weight:600}
+
+.content{max-width:var(--maxw);margin:24px auto;padding:0 16px}
+.panel{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;margin-bottom:18px}
+.projects-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.projects-grid li{background:rgba(255,255,255,0.01);padding:12px;border-radius:10px}
+.site-footer{max-width:var(--maxw);margin:20px auto;padding:12px 16px;color:var(--muted);text-align:center}
+
+/* Features / Badge styles */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+  list-style:none;
+  padding:0;
+  margin:12px 0 0 0;
+}
+.feature-card{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  border:1px solid rgba(255,255,255,0.02);
+}
+.feature-media img{
+  width:120px;
+  height:120px;
+  object-fit:contain;
+  border-radius:8px;
+  background:#0b1220;
+  display:block;
+}
+.feature-body h3{margin:0 0 6px 0}
+.feature-body p{margin:6px 0;color:var(--muted)}
+.muted{color:var(--muted);margin:6px 0 8px 0}
+.feature-link{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;font-weight:600}
+
+/* Experience styles */
+.experience-list{list-style:none;padding:0;margin:8px 0 0 0;display:grid;gap:14px}
+.job{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.02)}
+.job h3{margin:0 0 6px 0}
+.job-meta{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
+.job ul{margin:6px 0 0 18px;color:var(--muted)}
+
+/* Footer social row */
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.footer-social{display:flex;gap:12px;align-items:center}
+.footer-social .social-link{width:auto;height:auto;padding:4px 8px;border-radius:6px;font-size:0.9rem;color:var(--muted)}
+.footer-social .social-link:hover{background:rgba(125,211,252,0.06);color:var(--accent)}
+
+/* Responsive tweaks */
+@media (max-width:1000px){
+  .feature-card{flex-direction:row}
+  .profile-photo{width:56px;height:56px}
+  .nav-links{display:none}
+}
+@media (max-width:600px){
+  .hero{padding:18px}
+  .feature-media img{width:100px;height:100px}
+  .features-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
