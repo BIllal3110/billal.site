@@ -1,34 +1,29 @@
 # billal3110.github.io
 
-Personal website for Muhammed Billal (Dhaka, Bangladesh).
+Update: Credly "Introduction to Cybersecurity" badge image replaced with the image URL you provided.
 
-Files:
-- `index.html` - homepage (uses `profile.jpg` as the profile photo)
-- `styles.css` - styles
-- `images/` - optional folder for local badge/skill images
+Change applied
+- Credly badge <img> now uses: https://i.ibb.co/mKpBRqD/introduction-to-cybersecurity.png
+  - This is used directly in `index.html` as the image source.
 
-What I added
-- New "Experience" section with your full professional history (roles, companies, dates, bullets).
-- Navigation link to jump to Experience.
-- Badges & Achievements cards (TryHackMe, Google Skills, Google Dev, Credly) and social links.
+Recommended (more reliable)
+- Download the image and save it in your repo at `images/credly-intro-cyber.png` and then update the `src` to `images/credly-intro-cyber.png`. That prevents broken images if the remote host removes or blocks hotlinking.
 
-How to update or publish
-1. Add images:
-   - Profile photo: save your photo as `profile.jpg` in the repo root.
-   - Badges/images: place them in `images/` (e.g., `images/google-skills.png`, `images/gdev.png`, `images/credly-intro-cyber.png`) or keep remote URLs.
-2. Commit & push:
+How to save the image locally:
+1. Open this URL in your browser:
+   - https://i.ibb.co/mKpBRqD/introduction-to-cybersecurity.png
+2. Right-click → "Save image as..." → save into your site folder under `images/credly-intro-cyber.png`.
+3. Update `index.html` if you want the local path (I can prepare that change for you).
+4. Commit & push:
    ```bash
-   git add .
-   git commit -m "Add Experience section and update site"
+   git add images/credly-intro-cyber.png index.html
+   git commit -m "Add Credly badge image and update index"
    git push
    ```
-3. Your site will be live at:
-   - https://billal3110.github.io
 
-Next suggestions (pick any):
-- Create a printable Resume page or a downloadable PDF (I can generate a simple resume PDF from this data).
-- Re-order or expand bullet points, add technologies/skills for each role.
-- Add a "Skills" section listing technical skills and proficiency.
-- Optimize and host all badge images locally and produce a zip for direct upload.
+If you'd like, I can:
+- Update `index.html` to point to the local image path and give you the exact commit-ready files.
+- Fetch & optimize the image (resize and compress) and provide a zip you can upload.
+- Apply the change directly in your repository (I can prepare a single commit if you want the files bundled).
 
-Which would you like next? I can generate a downloadable PDF resume, make a separate resume page, or add a skills section with icons and proficiency levels.  
+Which would you like next?  
