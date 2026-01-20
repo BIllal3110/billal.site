@@ -69,7 +69,7 @@ a{color:inherit;text-decoration:none}
 .panel{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.45)}
 .panel h2{margin-top:0;margin-bottom:8px}
 
-/* Features grid (unchanged) */
+/* Features grid */
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;list-style:none;padding:0;margin:12px 0 0 0}
 .feature-card{display:flex;gap:18px;align-items:flex-start;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.02);transform:translateY(18px);opacity:0;transition:transform .6s var(--ease), opacity .6s var(--ease);will-change:transform,opacity}
 .feature-card.in-view{transform:none;opacity:1}
@@ -78,7 +78,7 @@ a{color:inherit;text-decoration:none}
 .feature-media img{width:100%;height:auto;max-width:140px;max-height:120px;object-fit:contain;display:block;border-radius:10px;background:var(--surface);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
 .feature-media .placeholder{display:none;width:100%;height:100%;border-radius:10px;background:linear-gradient(90deg,#071227,#0b1220);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.85rem;text-align:center;padding:8px}
 
-/* Credly embed rules kept */
+/* Credly embed rules */
 .badge-embed { overflow: visible; align-items: center; }
 .badge-embed .feature-media { min-width: 150px; width: 150px; height: 270px; overflow: visible; display: flex; align-items: center; justify-content: center; padding: 0; border-radius: 10px; background: transparent; }
 .badge-embed .feature-media > div[data-share-badge-id], .badge-embed .feature-media iframe { width: 100% !important; height: 100% !important; display: block !important; border: 0 !important; margin: 0 !important; padding: 0 !important; }
@@ -124,8 +124,26 @@ a{color:inherit;text-decoration:none}
   background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
   border:1px solid rgba(255,255,255,0.02);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  overflow:hidden;              /* ensure embedded icons cannot overflow */
 }
-.contact-thumb .icon{width:30px;height:30px;fill:var(--accent);}
+
+/* Constrain contact icons so they never grow huge */
+.contact-thumb svg,
+.contact-thumb .icon {
+  width: 34px !important;
+  height: 34px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block;
+  fill: var(--accent);
+}
+
+/* Target any inline SVG that might include explicit width/height attributes */
+.contact-thumb svg[width],
+.contact-thumb svg[height]{
+  width: 34px !important;
+  height: 34px !important;
+}
 
 /* body text beside icon */
 .contact-body{flex:1;min-width:0}
@@ -150,10 +168,11 @@ a{color:inherit;text-decoration:none}
 @media (max-width:640px){
   .contact-grid{grid-template-columns:1fr}
   .contact-thumb{width:48px;height:48px;min-width:48px}
+  .contact-thumb svg, .contact-thumb .icon { width:28px !important; height:28px !important; }
   .contact-card{padding:10px}
 }
 
-/* Experience & project reveal animation (left unchanged) */
+/* Experience & project reveal animation */
 .experience-list{list-style:none;padding:0;margin:8px 0 0 0;display:grid;gap:14px}
 .job{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.02);transform:translateY(18px);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease)}
 .job.in-view{transform:none;opacity:1}
