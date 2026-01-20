@@ -18,7 +18,7 @@
 *,
 *::before,*::after{box-sizing:border-box}
 html,body{height:100%;margin:0;background:linear-gradient(180deg,#071129 0%, #071827 100%);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 
 /* Container */
 .container{max-width:var(--max-width);margin:0 auto;padding:0 16px}
@@ -69,66 +69,91 @@ a{color:inherit}
 .panel{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.45)}
 .panel h2{margin-top:0;margin-bottom:8px}
 
-/* Features grid */
+/* Features grid (unchanged) */
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;list-style:none;padding:0;margin:12px 0 0 0}
 .feature-card{display:flex;gap:18px;align-items:flex-start;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.02);transform:translateY(18px);opacity:0;transition:transform .6s var(--ease), opacity .6s var(--ease);will-change:transform,opacity}
 .feature-card.in-view{transform:none;opacity:1}
 .feature-card:hover{box-shadow:0 18px 50px rgba(2,6,23,0.55);transform:translateY(-8px) scale(1.01)}
-
-/* Media column */
 .feature-media{flex:0 0 140px;display:flex;align-items:center;justify-content:center;min-width:140px;position:relative;border-radius:10px;overflow:hidden}
 .feature-media img{width:100%;height:auto;max-width:140px;max-height:120px;object-fit:contain;display:block;border-radius:10px;background:var(--surface);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
 .feature-media .placeholder{display:none;width:100%;height:100%;border-radius:10px;background:linear-gradient(90deg,#071227,#0b1220);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.85rem;text-align:center;padding:8px}
 
-/* Special styling for embed badge to center and animate */
-/* Make sure embed area is large enough and not clipped */
-.badge-embed {
-  /* allow the card to expand without clipping */
-  overflow: visible;
-  align-items: center; /* vertically center embed and body */
-}
-.badge-embed .feature-media {
-  min-width: 150px;
-  width: 150px;
-  height: 270px;
-  overflow: visible;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border-radius: 10px;
-  background: transparent;
-}
-/* ensure the injected embed and iframe fill the container */
-.badge-embed .feature-media > div[data-share-badge-id],
-.badge-embed .feature-media iframe {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-  border: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-/* center the text block vertically beside the tall embed */
-.badge-embed .feature-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  min-height: 100%;
-}
-/* Add small transform/hover effect for embed */
+/* Credly embed rules kept */
+.badge-embed { overflow: visible; align-items: center; }
+.badge-embed .feature-media { min-width: 150px; width: 150px; height: 270px; overflow: visible; display: flex; align-items: center; justify-content: center; padding: 0; border-radius: 10px; background: transparent; }
+.badge-embed .feature-media > div[data-share-badge-id], .badge-embed .feature-media iframe { width: 100% !important; height: 100% !important; display: block !important; border: 0 !important; margin: 0 !important; padding: 0 !important; }
+.badge-embed .feature-body { display: flex; flex-direction: column; justify-content: center; gap: 8px; min-height: 100%; }
 .badge-embed .feature-media > div[data-share-badge-id] { transition:transform .48s var(--ease), box-shadow .48s var(--ease); border-radius:10px; overflow:hidden; }
 .badge-embed.in-view .feature-media > div[data-share-badge-id] { transform:translateY(-6px) rotate(-1deg); box-shadow:0 20px 50px rgba(6,182,212,0.06); }
 
-/* Feature body */
-.feature-body h3{margin:0 0 6px 0}
-.feature-body p{margin:6px 0;color:var(--muted)}
-.muted{color:var(--muted)}
-.feature-link{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;font-weight:700;transition:transform .18s var(--ease)}
-.feature-link:hover{transform:translateY(-4px)}
+/* CONTACT: grid of mini cards */
+.contact-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin-top:12px;
+  align-items:start;
+}
+.contact-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  border:1px solid rgba(255,255,255,0.02);
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease);
+  overflow:visible;
+  position:relative;
+}
+.contact-card:hover, .contact-card:focus{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 20px 50px rgba(2,6,23,0.55);
+  background:linear-gradient(180deg, rgba(125,211,252,0.02), rgba(0,0,0,0.02));
+}
 
-/* Experience list */
+/* small thumbnail/icon */
+.contact-thumb{
+  width:56px;
+  height:56px;
+  min-width:56px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border:1px solid rgba(255,255,255,0.02);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.contact-thumb .icon{width:30px;height:30px;fill:var(--accent);}
+
+/* body text beside icon */
+.contact-body{flex:1;min-width:0}
+.contact-title{font-weight:700}
+.contact-sub{color:var(--muted);font-size:0.92rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* right chevron */
+.contact-action{width:28px;height:28px;display:flex;align-items:center;justify-content:center;opacity:0.9}
+.contact-action .icon-chevron{width:18px;height:18px;fill:var(--muted)}
+
+/* make entire card keyboard-focusable */
+.contact-card:focus{outline:none}
+.contact-card:focus-visible{outline:var(--focus);outline-offset:3px;border-radius:10px}
+
+/* keep alignment good when embed tall */
+.badge-embed .contact-card{align-items:flex-start}
+
+/* Responsive: stack on smaller screens */
+@media (max-width:900px){
+  .contact-grid{grid-template-columns:repeat(2, 1fr)}
+}
+@media (max-width:640px){
+  .contact-grid{grid-template-columns:1fr}
+  .contact-thumb{width:48px;height:48px;min-width:48px}
+  .contact-card{padding:10px}
+}
+
+/* Experience & project reveal animation (left unchanged) */
 .experience-list{list-style:none;padding:0;margin:8px 0 0 0;display:grid;gap:14px}
 .job{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.02);transform:translateY(18px);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease)}
 .job.in-view{transform:none;opacity:1}
@@ -136,7 +161,7 @@ a{color:inherit}
 .job-meta{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
 .job ul{margin:6px 0 0 18px;color:var(--muted)}
 
-/* Projects grid */
+/* Projects grid animation */
 .projects-grid{list-style:none;padding:0;margin:8px 0 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .projects-grid li{background:rgba(255,255,255,0.01);padding:12px;border-radius:10px;transform:translateY(12px);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease)}
 .projects-grid li.in-view{transform:none;opacity:1}
@@ -159,29 +184,4 @@ a{color:inherit}
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important;animation:none !important}
   .feature-card, .job, .projects-grid li{transform:none !important;opacity:1 !important}
-}
-
-/* Responsive */
-@media (max-width:1000px){
-  .nav-links{display:none}
-  .profile-photo{width:56px;height:56px;border-radius:12px}
-  .feature-media{flex:0 0 120px;min-width:120px}
-  .feature-media img{max-width:120px;max-height:100px}
-}
-@media (max-width:720px){
-  .hero{padding:22px}
-  .features-grid{grid-template-columns:1fr}
-  .feature-card{flex-direction:row}
-  .feature-media{min-width:100px;flex:0 0 100px}
-  .feature-media img{max-width:100px;max-height:84px}
-  .hero-ctas{flex-direction:column;align-items:flex-start}
-  /* scale down embed on smaller screens */
-  .badge-embed .feature-media{min-width:120px;width:120px;height:220px}
-  .badge-embed .feature-media > div[data-share-badge-id],
-  .badge-embed .feature-media iframe{width:100% !important;height:100% !important}
-}
-@media (max-width:480px){
-  .profile-photo{width:48px;height:48px}
-  .brand{font-size:1rem}
-  .hero-title{font-size:1.5rem}
 }
