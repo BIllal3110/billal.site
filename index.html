@@ -276,10 +276,70 @@
       </ul>
     </section>
 
-    <section id="contact" class="panel" data-animate>
-      <h2>Contact</h2>
-      <p>Find me on <a href="https://github.com/BIllal3110" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/muhammed-billal-262048b5/" target="_blank" rel="noopener">LinkedIn</a>, or visit my website: <a href="https://muhammadbillalinfo.my.canva.site/" target="_blank" rel="noopener">muhammadbillalinfo.my.canva.site</a>.</p>
-      <p>If you'd like an email address shown here, tell me what you'd like to use and I will add it.</p>
+    <!-- UPDATED CONTACT SECTION: visual cards with mini icons -->
+    <section id="contact" class="panel" data-animate aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+
+      <p class="muted">Find me on these profiles — click any card to open the link.</p>
+
+      <div class="contact-grid">
+        <!-- GitHub card -->
+        <a class="contact-card" href="https://github.com/BIllal3110" target="_blank" rel="noopener" aria-label="Open GitHub profile">
+          <div class="contact-thumb">
+            <!-- GitHub mini (SVG) -->
+            <svg class="icon icon-github" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.21 7.71 10.7.56.1.76-.24.76-.54 0-.27-.01-1.16-.01-2.1-3.13.68-3.79-1.51-3.79-1.51-.51-1.31-1.25-1.66-1.25-1.66-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 .17 1.57-.78 1.57-.78.78-1.33 2.05-.95 2.55-.73.08-.57.31-1 .56-1.23-2.5-.29-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.45.11-3.03 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 2.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.11-1.16 3.11-1.16.62 1.58.24 2.74.12 3.03.72.8 1.16 1.8 1.16 3.03 0 4.32-2.63 5.26-5.14 5.54.32.28.6.82.6 1.66 0 1.2-.01 2.17-.01 2.46 0 .3.2.65.77.54 4.48-1.49 7.71-5.72 7.71-10.7C23.25 5.48 18.27.5 12 .5z"/>
+            </svg>
+          </div>
+
+          <div class="contact-body">
+            <div class="contact-title">GitHub</div>
+            <div class="contact-sub">github.com/BIllal3110</div>
+          </div>
+
+          <div class="contact-action">
+            <svg class="icon icon-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.29 6.71a1 1 0 0 1 1.42 0L15 11l-4.29 4.29a1 1 0 1 1-1.42-1.42L12.17 11 9.3 8.12a1 1 0 0 1 0-1.41z"/></svg>
+          </div>
+        </a>
+
+        <!-- LinkedIn card -->
+        <a class="contact-card" href="https://www.linkedin.com/in/muhammed-billal-262048b5/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
+          <div class="contact-thumb">
+            <!-- LinkedIn mini (SVG) -->
+            <svg class="icon icon-linkedin" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06C20.9 8.54 21 11.1 21 14.06V21H17v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.61-2.38 3.28V21H9z"/>
+            </svg>
+          </div>
+
+          <div class="contact-body">
+            <div class="contact-title">LinkedIn</div>
+            <div class="contact-sub">linkedin.com/in/muhammed-billal-262048b5</div>
+          </div>
+
+          <div class="contact-action">
+            <svg class="icon icon-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.29 6.71a1 1 0 0 1 1.42 0L15 11l-4.29 4.29a1 1 0 1 1-1.42-1.42L12.17 11 9.3 8.12a1 1 0 0 1 0-1.41z"/></svg>
+          </div>
+        </a>
+
+        <!-- Website card -->
+        <a class="contact-card" href="https://muhammadbillalinfo.my.canva.site/" target="_blank" rel="noopener" aria-label="Open personal website">
+          <div class="contact-thumb">
+            <!-- small site preview (globe SVG) -->
+            <svg class="icon icon-site" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 2.1c1.45.2 2.6.9 3.35 1.8-.5.18-1.32.33-2.35.33-1.02 0-1.85-.15-2.35-.33.75-.9 1.9-1.6 3.35-1.8zM5.1 9c.34-.5 1.6-1 4.9-1 3.31 0 4.56.5 4.9 1-.34.5-1.6 1-4.9 1-3.31 0-4.56-.5-4.9-1zM12 17a6.97 6.97 0 01-4.9-1.9c.34-.5 1.6-1 4.9-1 3.31 0 4.56.5 4.9 1-.34.5-1.6 1-4.9 1z"/>
+            </svg>
+          </div>
+
+          <div class="contact-body">
+            <div class="contact-title">Website</div>
+            <div class="contact-sub">muhammadbillalinfo.my.canva.site</div>
+          </div>
+
+          <div class="contact-action">
+            <svg class="icon icon-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.29 6.71a1 1 0 0 1 1.42 0L15 11l-4.29 4.29a1 1 0 1 1-1.42-1.42L12.17 11 9.3 8.12a1 1 0 0 1 0-1.41z"/></svg>
+          </div>
+        </a>
+      </div>
     </section>
   </main>
 
