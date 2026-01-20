@@ -5,68 +5,85 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Muhammed Billal — Personal Site</title>
   <meta name="description" content="Personal website of Muhammed Billal from Dhaka, Bangladesh." />
+
+  <!-- Social / SEO -->
+  <meta property="og:title" content="Muhammed Billal — Developer & Learner" />
+  <meta property="og:description" content="Portfolio, badges and projects of Muhammed Billal from Dhaka, Bangladesh." />
+  <meta property="og:image" content="https://i.ibb.co/JwhsktKK/2.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://yourdomain.example/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header class="site-header">
-    <nav class="nav">
+    <nav class="nav container" aria-label="Main navigation">
       <div class="nav-left">
-        <img class="profile-photo" src="https://i.ibb.co/JwhsktKK/2.png" alt="Muhammed Billal profile photo" />
-        <div class="brand">Muhammed Billal</div>
+        <img class="profile-photo" src="https://i.ibb.co/JwhsktKK/2.png" alt="Muhammed Billal profile photo" width="72" height="72" />
+
+        <div class="brand" data-animate>
+          <span class="brand-accent">Muhammed</span> Billal
+        </div>
       </div>
 
       <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#features">Badges</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links" role="menubar" aria-hidden="false">
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#features">Badges</a></li>
+          <li role="none"><a role="menuitem" href="#experience">Experience</a></li>
+          <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
         </ul>
 
         <div class="social-links" aria-label="Social links">
           <a class="social-link" href="https://github.com/BIllal3110" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.21 7.71 10.7.56.1.76-.24.76-.54 0-.27-.01-1.16-.01-2.1-3.13.68-3.79-1.51-3.79-1.51-.51-1.31-1.25-1.66-1.25-1.66-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 .17 1.57-.78 1.57-.78.78-1.33 2.05-.95 2.55-.73.08-.57.31-1 .56-1.23-2.5-.29-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.45.11-3.03 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 2.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.11-1.16 3.11-1.16.62 1.58.24 2.74.12 3.03.72.8 1.16 1.8 1.16 3.03 0 4.32-2.63 5.26-5.14 5.54.32.28.6.82.6 1.66 0 1.2-.01 2.17-.01 2.46 0 .3.2.65.77.54 4.48-1.49 7.71-5.72 7.71-10.7C23.25 5.48 18.27.5 12 .5z"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.21 7.71 10.7.56.1.76-.24.76-.54 0-.27-.01-1.16-.01-2.1-3.13.68-3.79-1.51-3.79-1.51-.51-1.31-1.25-1.66-1.25-1.66-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 .17 1.57-.78 1.57-.78.78-1.33 2.05-.95 2.55-.73.08-.57.31-1 .56-1.23-2.5-.29-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.45.11-3.03 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 2.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.11-1.16 3.11-1.16.62 1.58.24 2.74.12 3.03.72.8 1.16 1.8 1.16 3.03 0 4.32-2.63 5.26-5.14 5.54.32.28.6.82.6 1.66 0 1.2-.01 2.17-.01 2.46 0 .3.2.65.77.54 4.48-1.49 7.71-5.72 7.71-10.7C23.25 5.48 18.27.5 12 .5z"/></svg>
           </a>
 
           <a class="social-link" href="https://www.linkedin.com/in/muhammed-billal-262048b5/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06C20.9 8.54 21 11.1 21 14.06V21H17v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.61-2.38 3.28V21H9z"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06C20.9 8.54 21 11.1 21 14.06V21H17v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.61-2.38 3.28V21H9z"/></svg>
           </a>
 
           <a class="social-link" href="https://tryhackme.com/p/muhammadbillal" target="_blank" rel="noopener" aria-label="TryHackMe">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2C7 2 2.73 5.11 1 9.5c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 5.11 17 2 12 2zm0 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
-          </a>
-
-          <a class="social-link" href="https://www.skills.google/public_profiles/51306e9d-3fd2-4640-b7c3-625508b8b79d" target="_blank" rel="noopener" aria-label="Google Skills">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 14.5h-2v-6h2v6zm0-8H11V7h2v1.5z"/></svg>
-          </a>
-
-          <a class="social-link" href="https://g.dev/muhammadbillal" target="_blank" rel="noopener" aria-label="Google Developer">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2l7 4v8l-7 4-7-4V6l7-4zm0 2.3L6.5 7.2v7.6L12 16.7l5.5-1.9V7.2L12 4.3zM11 9h2v6h-2z"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 2C7 2 2.73 5.11 1 9.5c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 5.11 17 2 12 2zm0 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
           </a>
         </div>
       </div>
     </nav>
 
-    <section class="hero">
-      <h1>Hello — I'm Muhammed Billal</h1>
-      <p>Energetic learner • Developer • Problem Solver — Dhaka, Bangladesh</p>
-      <a class="cta" href="#projects">View Projects</a>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-inner" data-animate>
+        <h1 id="hero-heading" class="hero-title">Hello — I'm Muhammed Billal</h1>
+        <p class="hero-sub">Energetic learner • Developer • Problem Solver — Dhaka, Bangladesh</p>
+        <div class="hero-ctas">
+          <a class="cta" href="#projects">View Projects</a>
+          <a class="cta cta-outline" href="#features">See Badges</a>
+        </div>
+      </div>
     </section>
   </header>
 
-  <main class="content">
+  <main id="content" class="content container">
     <!-- Features / Badges section -->
-    <section id="features" class="panel">
-      <h2>Badges & Achievements</h2>
+    <section id="features" class="panel" aria-labelledby="features-heading" data-animate>
+      <h2 id="features-heading">Badges & Achievements</h2>
       <p>Some of the badges, certifications, and milestones I've earned while learning and practicing cybersecurity and other skills.</p>
 
       <ul class="features-grid">
-        <!-- TryHackMe (remote image) -->
-        <li class="feature-card">
+        <!-- TryHackMe -->
+        <li class="feature-card" data-animate>
           <div class="feature-media">
             <a class="feature-link-media" href="https://tryhackme.com/p/muhammadbillal" target="_blank" rel="noopener">
-              <img loading="lazy" src="https://tryhackme-badges.s3.amazonaws.com/muhammadbillal.png" alt="TryHackMe 180 Day Streak badge" />
+              <img loading="lazy" src="https://tryhackme-badges.s3.amazonaws.com/muhammadbillal.png" alt="TryHackMe 180 Day Streak badge" width="140" height="90" />
             </a>
             <div class="placeholder">TryHackMe image not available</div>
           </div>
@@ -78,11 +95,11 @@
           </div>
         </li>
 
-        <!-- Google Skills (remote/local as before) -->
-        <li class="feature-card">
+        <!-- Google Skills -->
+        <li class="feature-card" data-animate>
           <div class="feature-media">
             <a class="feature-link-media" href="https://www.skills.google/public_profiles/51306e9d-3fd2-4640-b7c3-625508b8b79d" target="_blank" rel="noopener">
-              <img loading="lazy" src="https://i.ibb.co/274gsPXW/silver.png" alt="Google Skills profile" />
+              <img loading="lazy" src="https://i.ibb.co/274gsPXW/silver.png" alt="Google Skills profile" width="140" height="90" />
             </a>
             <div class="placeholder">Google Skills image not available</div>
           </div>
@@ -94,11 +111,11 @@
           </div>
         </li>
 
-        <!-- Google Developer (image replaced per your request) -->
-        <li class="feature-card">
+        <!-- Google Developer -->
+        <li class="feature-card" data-animate>
           <div class="feature-media">
             <a class="feature-link-media" href="https://g.dev/muhammadbillal" target="_blank" rel="noopener">
-              <img loading="lazy" src="https://i.ibb.co/9HYxHDg3/badge.jpg" alt="Google Developer profile badge" />
+              <img loading="lazy" src="https://i.ibb.co/9HYxHDg3/badge.jpg" alt="Google Developer profile badge" width="140" height="90" />
             </a>
             <div class="placeholder">Google Dev image not available</div>
           </div>
@@ -110,11 +127,11 @@
           </div>
         </li>
 
-        <!-- Credly -->
-        <li class="feature-card">
+        <!-- Existing Credly image card -->
+        <li class="feature-card" data-animate>
           <div class="feature-media">
             <a class="feature-link-media" href="https://www.credly.com/badges/6931da38-635d-4995-9318-f2105ba078d4" target="_blank" rel="noopener">
-              <img loading="lazy" src="https://i.ibb.co/mKpBRqD/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity - Credly" />
+              <img loading="lazy" src="https://i.ibb.co/mKpBRqD/introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity - Credly" width="140" height="90" />
             </a>
             <div class="placeholder">Credly image not available</div>
           </div>
@@ -125,10 +142,31 @@
             <a class="feature-link" href="https://www.credly.com/badges/6931da38-635d-4995-9318-f2105ba078d4" target="_blank" rel="noopener">View on Credly</a>
           </div>
         </li>
+
+        <!-- New Credly embed for Cybersecurity Fundamentals (IBM SKILLSBUILD) -->
+        <li class="feature-card badge-embed" data-animate>
+          <div class="feature-media" aria-hidden="true">
+            <!-- Credly embed container (no placeholder text) -->
+            <div data-iframe-width="150"
+                 data-iframe-height="270"
+                 data-share-badge-id="bb8d5af8-e78a-4976-91a4-ee46dc7fadba"
+                 data-share-badge-host="https://www.credly.com">
+            </div>
+          </div>
+
+          <div class="feature-body">
+            <h3>Cybersecurity Fundamentals</h3>
+            <p class="muted">Issued by IBM SKILLSBUILD</p>
+            <p>Foundational cybersecurity knowledge demonstrated by the Credly badge below.</p>
+            <a class="feature-link"
+               href="https://www.credly.com/badges/bb8d5af8-e78a-4976-91a4-ee46dc7fadba/public_url"
+               target="_blank" rel="noopener">View badge on Credly</a>
+          </div>
+        </li>
       </ul>
     </section>
 
-    <section id="about" class="panel">
+    <section id="about" class="panel" data-animate>
       <h2>About</h2>
       <p>Hi — I'm Muhammed (Billal) from Dhaka, Bangladesh. I build projects, learn new technologies, and solve problems. Replace this paragraph with a short bio about your background, skills, and what you're currently working on.</p>
       <p>I am energetic and eager to learn new skills, and I am highly enthusiastic about my work and upcoming tasks.</p>
@@ -136,12 +174,11 @@
       <p><strong>Website:</strong> <a href="https://muhammadbillalinfo.my.canva.site/" target="_blank" rel="noopener">muhammadbillalinfo.my.canva.site</a></p>
     </section>
 
-    <!-- Experience section -->
-    <section id="experience" class="panel">
+    <!-- Experience -->
+    <section id="experience" class="panel" data-animate>
       <h2>Professional Experience</h2>
-
       <ul class="experience-list">
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Expert Student Advisor</h3>
           <p class="job-meta">10 Minute School — Dhaka, Bangladesh | Aug 2023 – Present</p>
           <ul>
@@ -150,7 +187,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Customer Service Representative</h3>
           <p class="job-meta">Digicon Technologies Ltd — Dhaka, Bangladesh | Dec 2021 – Aug 2023</p>
           <ul>
@@ -159,7 +196,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Chief Technology Officer</h3>
           <p class="job-meta">We Can Change — Morocco | Mar 2021 – Present</p>
           <ul>
@@ -167,7 +204,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Sales Associate</h3>
           <p class="job-meta">Prince Bazar — Dhaka, Bangladesh | Jan 2021 – Dec 2021</p>
           <ul>
@@ -175,7 +212,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Social Media Marketing Intern</h3>
           <p class="job-meta">TopTrove Foundation — India | May 2021 – Jun 2021</p>
           <ul>
@@ -183,7 +220,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Campus Ambassador Intern</h3>
           <p class="job-meta">International MUN — Dhaka, Bangladesh | Apr 2021 – Jun 2021</p>
           <ul>
@@ -191,7 +228,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Marketing Research Intern</h3>
           <p class="job-meta">Inception Wave — Dhaka, Bangladesh | Apr 2021 – May 2021</p>
           <ul>
@@ -199,7 +236,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>College Ambassador</h3>
           <p class="job-meta">SILSWA — Dhaka, Bangladesh | Sep 2018 – Dec 2020</p>
           <ul>
@@ -207,7 +244,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Cadet</h3>
           <p class="job-meta">Bangladesh National Cadet Corps (BNCC) — Dhaka, Bangladesh | Jul 2018 – Jun 2020</p>
           <ul>
@@ -215,7 +252,7 @@
           </ul>
         </li>
 
-        <li class="job">
+        <li class="job" data-animate>
           <h3>Member</h3>
           <p class="job-meta">Bishwo Shahitto Kendro — Dhaka, Bangladesh | Aug 2019 – Mar 2020</p>
           <ul>
@@ -225,21 +262,21 @@
       </ul>
     </section>
 
-    <section id="projects" class="panel">
+    <section id="projects" class="panel" data-animate>
       <h2>Projects</h2>
       <ul class="projects-grid">
-        <li>
+        <li data-animate>
           <h3>Project One</h3>
           <p>Short description. <a href="#">Repo / Demo</a></p>
         </li>
-        <li>
+        <li data-animate>
           <h3>Project Two</h3>
           <p>Short description. <a href="#">Repo / Demo</a></p>
         </li>
       </ul>
     </section>
 
-    <section id="contact" class="panel">
+    <section id="contact" class="panel" data-animate>
       <h2>Contact</h2>
       <p>Find me on <a href="https://github.com/BIllal3110" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/muhammed-billal-262048b5/" target="_blank" rel="noopener">LinkedIn</a>, or visit my website: <a href="https://muhammadbillalinfo.my.canva.site/" target="_blank" rel="noopener">muhammadbillalinfo.my.canva.site</a>.</p>
       <p>If you'd like an email address shown here, tell me what you'd like to use and I will add it.</p>
@@ -247,7 +284,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
+    <div class="footer-inner container">
       <p>© <span id="year"></span> Muhammed Billal — Built with ❤️</p>
       <div class="footer-social">
         <a class="social-link" href="https://github.com/BIllal3110" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -258,6 +295,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Credly embed script (included once) -->
+  <script async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
 
   <script>
     // Year
@@ -294,6 +334,28 @@
         }
       });
     });
+
+    // Intersection Observer for reveal animations
+    (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        // Show everything immediately for reduced motion users
+        document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('in-view'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            // optional: unobserve once visible
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+      document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
+    })();
   </script>
 </body>
 </html>
